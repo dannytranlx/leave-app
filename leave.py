@@ -1,4 +1,3 @@
-import sys
 import time
 import argparse
 
@@ -12,7 +11,6 @@ class LeaveApp():
 
 	def build_argparser(self):
 		parser = argparse.ArgumentParser(description = "LeaveApp application")
-
 		subparsers = parser.add_subparsers(help = "Help")
 
 		# when command
@@ -53,6 +51,7 @@ class LeaveApp():
 
 		time_in = time_out - lunch_time - time_work
 		time_in = time.strftime("%H:%M",time.localtime(time_in))
+
 		print 'You must check in at ' + time_in + '!'
 
 class TimeParser():
@@ -62,7 +61,6 @@ class TimeParser():
 
 	def time_to_sec(self, p_time):
 		return float(p_time) * 60 * 60
-
 
 if __name__ == "__main__":
 	LeaveApp().run()
