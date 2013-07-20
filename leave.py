@@ -17,14 +17,14 @@ class LeaveApp():
 
 		# when command
 		parser_list = subparsers.add_parser('when', help='Gives the time when you can leave')
-		parser_list.add_argument('time_in', action="store", nargs="?", type=str, help='Time you checked in')
+		parser_list.add_argument('time_in', action="store", type=str, help='Time you checked in')
 		parser_list.add_argument('lunch_time', action="store", default="0.50", nargs="?", type=str, help='Time you are sprending for lunch')
 		parser_list.add_argument('time_work', action="store", default="7", nargs="?", type=str, help='Time you need to do in a day')
 		parser_list.set_defaults(func=self.command_when)
 
 		# leave command
 		parser_list = subparsers.add_parser('leave', help='Gives the time when you need to come in to leave at the desired time')
-		parser_list.add_argument('time_out', action="store", nargs="?", type=str, help='Time you want to leave')
+		parser_list.add_argument('time_out', action="store", type=str, help='Time you want to leave')
 		parser_list.add_argument('lunch_time', action="store", default="0.50", nargs="?", type=str, help='Time you are sprending for lunch')
 		parser_list.add_argument('time_work', action="store", default="7", nargs="?", type=str, help='Time you need to do in a day')
 		parser_list.set_defaults(func=self.command_leave)
